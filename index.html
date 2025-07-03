@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Desarrollador</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <h1>Franklin Joel Frías Rodríguez</h1>
+                <p class="subtitle">Desarrollador & Estudiante de Ingeniería en Sistemas</p>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#" onclick="showSection('about')" class="active">Sobre Mí</a></li>
+                <li><a href="#" onclick="showSection('projects')">Proyectos</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- About Section -->
+            <section id="about-section" class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Sobre Mí</h2>
+                </div>
+                <div class="section-content">
+                    <p class="about-text">
+                        Soy un desarrollador apasionado por la tecnología y estudiante de Ingeniería en Sistemas, 
+                        con experiencia en el desarrollo de aplicaciones web y de escritorio. Mi enfoque se centra en 
+                        crear soluciones eficientes y escalables utilizando las mejores prácticas de desarrollo.
+                    </p>
+                    <br>
+                    <p class="about-text">
+                        A través de mi formación académica y la realización de proyectos personales, he participado en distintas iniciativas que me han permitido consolidar mis habilidades técnicas, manteniendo siempre un enfoque profesional. Mi objetivo es seguir creciendo como desarrollador y contribuir con soluciones innovadoras en cada nuevo desafío.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects-section" class="section hidden">
+                <div class="section-header">
+                    <h2 class="section-title">Proyectos</h2>
+                </div>
+
+                <div class="projects-grid">
+
+                    <!-- Project Ysapelli -->
+                    <div class="project-card" onclick="openProject('ysapelli')">
+                        <div class="project-image">
+                            <img src="images/project-image/ysapelli.png" alt="Logo ysapelli" srcset="">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Sistema de Gestión Empresarial</h3>
+                            <p class="project-description padded">
+                                Aplicación web completa para la gestión de empleados, vendedores ambulantes, inventario, facturación empresarial, etc.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Hostinger</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Mary Variedades -->
+                    <div class="project-card" onclick="openProject('mary-variedades')">
+                        <div class="project-image">
+                            <img src="images/project-image/mary-variedades.jpg" alt="Logo mary-variedades" srcset="">
+                        </div>
+                        <div class="project-info">
+                            <h3 class="project-title">Sistema de Ventas</h3>
+                            <p class="project-description padded">
+                                Aplicacion de escritorio para la gestión de ventas, inventario y reportes, diseñada para pequeños comercios.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Netbeans</span>
+                                <span class="tech-tag">MySQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle" class="modal-title"></h2>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="project-details">
+                    <div>
+                        <div class="detail-item">
+                            <div class="detail-label">Cliente/Propietario</div>
+                            <div id="modalOwner" class="detail-value"></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Tiempo de Desarrollo</div>
+                            <div id="modalDuration" class="detail-value"></div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Estado</div>
+                            <div id="modalStatus" class="detail-value"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="detail-item">
+                            <div class="detail-label">Tecnologías Utilizadas</div>
+                            <div id="modalTech" class="detail-value"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-item">
+                    <div class="detail-label">Descripción del Proyecto</div>
+                    <div id="modalDescription" class="detail-value"></div>
+                </div>
+
+                <div class="project-gallery">
+                    <div class="detail-label">Galería del Proyecto</div>
+                    <div id="modalGallery" class="gallery-grid">
+                        <!-- Las imágenes se cargarán aquí dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/javascript.js"></script>
+
+</body>
+</html>
